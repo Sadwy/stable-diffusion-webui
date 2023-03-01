@@ -8,6 +8,9 @@ import platform
 import argparse
 import json
 
+os.system('which python')
+os.system('which pip')
+
 dir_repos = "repositories"
 dir_extensions = "extensions"
 python = sys.executable
@@ -147,12 +150,29 @@ def git_clone(url, dir, name, commithash=None):
     if os.path.exists(dir):
         if commithash is None:
             return
-
+        if dir in ["repositories/stable-diffusion-stability-ai",
+                    "repositories/taming-transformers",
+                    "repositories/k-diffusion",
+                    "repositories/CodeFormer",
+                    "repositories/BLIP",
+                    ]:
+            return
         current_hash = run(f'"{git}" -C "{dir}" rev-parse HEAD', None, f"Couldn't determine {name}'s hash: {commithash}").strip()
         if current_hash == commithash:
             return
 
+        # print(f"The stupid url is: {url}")
+        print(f"The stupid dir is: {dir}")
+        if dir in ["repositories/stable-diffusion-stability-ai",
+                    "repositories/taming-transformers",
+                    "repositories/k-diffusion",
+                    "repositories/CodeFormer",
+                    "repositories/BLIP",
+                    ]:
+            return
+        breakpoint()
         run(f'"{git}" -C "{dir}" fetch', f"Fetching updates for {name}...", f"Couldn't fetch {name}")
+        print(f"Am I here???????????????")
         run(f'"{git}" -C "{dir}" checkout {commithash}', f"Checking out commit for {name} with hash: {commithash}...", f"Couldn't checkout commit {commithash} for {name}")
         return
 
