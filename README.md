@@ -159,3 +159,7 @@ Licenses for borrowed code can be found in `Settings -> Licenses` screen, and al
 - Security advice - RyotaK
 - Initial Gradio script - posted on 4chan by an Anonymous user. Thank you Anonymous user.
 - (You)
+
+# Sadwy Time
+
+使用Gradio共享页面: [知乎链接](https://zhuanlan.zhihu.com/p/374238080)

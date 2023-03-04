@@ -10,7 +10,10 @@
 #clone_dir="stable-diffusion-webui"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-export COMMANDLINE_ARGS="--device-id 1 --port 8883 --ckpt models/Stable-diffusion/chilloutmix_NiPrunedFp32Fix.safetensors"
+# export COMMANDLINE_ARGS="--device-id 1 --port 8883 --ckpt models/Stable-diffusion/chilloutmix_NiPrunedFp32Fix.safetensors"
+# export COMMANDLINE_ARGS="--device-id 1 --port 8883 --ckpt models/Stable-diffusion/novelaifinal-pruned.ckpt"
+export COMMANDLINE_ARGS="--device-id 0 --port 7860 --share --ckpt models/Stable-diffusion/v1-5-pruned-emaonly.ckpt"
+# export COMMANDLINE_ARGS="--device-id 1 --port 8883 --lora-dir models/Lora/"
 
 # python3 executable
 #python_cmd="python3"
